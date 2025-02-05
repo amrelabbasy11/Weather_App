@@ -3,13 +3,9 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY . /app/
 
-RUN pip install -r requirements.txt
-
-COPY . .
-
-RUN python -c "import app; app.init_db()"
+RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
 
