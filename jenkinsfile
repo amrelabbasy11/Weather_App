@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_TAG = "latest"
+        IMAGE_NAME = "weather-image" 
+    }
+
+    stages {
+        stage('Fetch Repo') {
+            steps {
+                git branch: 'main', credentialsId: 'jenkins-Token', url: 'https://github.com/amrelabbasy11/Weather_App.git'
+            }
+        }
+
+        stage('Login to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                    sh '''
+                        echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
+                    '''
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh 'docker build -t amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG} .'
+                }
+            }
+        }
+
+        stage('Push Image to Docker Hub') {
+            steps {
+                sh 'docker push amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG}'
+            }
+        }
+        
+        stage('Run Ansible Playbook and Container') {
+            steps {
+                sh '''
+                cd ansible
+                ansible-playbook -i inventory playbook.yml
+                
+                '''
+            }
+        }
+    }
+}
