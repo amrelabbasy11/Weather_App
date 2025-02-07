@@ -1,0 +1,48 @@
+- name: Setup and Run Docker on two machines
+  hosts: machines
+  become: true
+
+  tasks:
+   # - name: Update all system packages
+    #  yum:
+     #   name: "*"
+      #  state: latest
+
+    - name: Install required dependencies
+      yum:
+        name: yum-utils
+        state: present
+
+    - name: Set up the Docker repository
+      command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+      args:
+        creates: /etc/yum.repos.d/docker-ce.repo
+
+    - name: Install Docker packages
+      yum:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+
+    - name: Start and Enable Docker Engine
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull The Docker Image From Docker Hub
+      docker_image:
+        name: amrelabbasy/weather-image
+        source: pull
+
+    - name: Run The Docker Image on the machines
+      docker_container:
+        name: weather-container
+        image: amrelabbasy/weather-image
+        state: started
+        restart_policy: always
+        ports:
+          - "5000:5000"
+
