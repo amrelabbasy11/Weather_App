@@ -3,10 +3,16 @@ pipeline {
 
     environment {
         IMAGE_TAG = "latest"
-        IMAGE_NAME = "weather-image" 
+        IMAGE_NAME = "weather-image"
     }
 
     stages {
+        stage('Cleanup Workspace') {
+            steps {
+                sh 'rm -rf *'
+            }
+        }
+
         stage('Fetch Repo') {
             steps {
                 git branch: 'main', credentialsId: 'jenkins-Token', url: 'https://github.com/amrelabbasy11/Weather_App.git'
@@ -36,15 +42,22 @@ pipeline {
                 sh 'docker push amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG}'
             }
         }
-        
-        stage('Run Ansible Playbook and Container') {
+
+        stage('Deploy Using Ansible') {
             steps {
-                sh '''
-                cd ansible
-                ansible-playbook -i inventory playbook.yml
-                
-                '''
+                script {
+                    sh ''' 
+                    chmod 600 keys/vagrant-vm1/private_key
+                    chmod 600 keys/vagrant-vm2/private_key
+
+                    export ANSIBLE_HOST_KEY_CHECKING=False
+
+                    ansible-playbook -i inventory playbook.yml --private-key=keys/vagrant-vm1/private_key
+                    ansible-playbook -i inventory playbook.yml --private-key=keys/vagrant-vm2/private_key
+                    '''
+                }
             }
         }
     }
 }
+
