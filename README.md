@@ -68,3 +68,4 @@ Example Screenshot of the Image on Docker Hub:
 
 # Containers Running Successfully
 Below is a screenshot showing the containers actively running on both machines:
+![image](https://github.com/user-attachments/assets/e75b0c35-07ba-4b8b-bcbd-89f4f0f000bd)
