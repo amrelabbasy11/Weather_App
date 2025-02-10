@@ -25,3 +25,21 @@ Ensure the following are installed:
 
 ![Add a little bit of body text(1)](https://github.com/user-attachments/assets/92f94b39-3eb2-4b18-9d6b-774c0672214c)
 
+1. Push Application Code to GitHub
+Store the Python application source code in a private GitHub repository.
+
+2. Create a Dockerfile
+Write a Dockerfile to package the application into a container and commit it to the repository.
+
+3. Set Up Vagrant Machines
+Launch two lightweight virtual machines using Vagrant.
+
+4. Configure Jenkins for Automated Deployment
+Jenkins will orchestrate the following steps:
+- Clone Repository: Fetch the latest code from GitHub using secure credentials.
+- Build Docker Image: Use the Dockerfile to create a containerized version of the application.
+- Push Image to Docker Hub: Upload the Docker image to Docker Hub for distribution.
+- Run Ansible Playbook: Automate deployment with Ansible, performing:
+- Installation of Docker on Vagrant machines.
+- Pulling the application image from Docker Hub.
+- Running the containerized application on the virtual machines.
