@@ -69,3 +69,17 @@ Example Screenshot of the Image on Docker Hub:
 # Containers Running Successfully
 Below is a screenshot showing the containers actively running on both machines:
 ![image](https://github.com/user-attachments/assets/e75b0c35-07ba-4b8b-bcbd-89f4f0f000bd)
+
+# Application Execution
+Once everything is set up, you can launch your application. Below are screenshot showing the application output:
+![image](https://github.com/user-attachments/assets/07de0fc7-90e6-41e4-9d20-00db525d4f6d)
+
+# Conclusion
+By following the steps outlined in this README, you will be able to automate the deployment of your Python application using Jenkins, Docker, Vagrant, and Ansible. This setup ensures a streamlined and efficient deployment process, reducing manual intervention and increasing reliability.
+ith this CI/CD pipeline:
+- Code updates are automatically tested, built, and deployed.
+- Docker containers ensure consistency across environments.
+- Ansible automates infrastructure provisioning and configuration.
+- Vagrant provides a flexible and reproducible virtualized environment.
+  
+This approach enhances scalability, maintainability, and efficiency, making it easier to manage deployments in real-world scenarios.
