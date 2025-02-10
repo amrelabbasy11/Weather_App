@@ -20,3 +20,8 @@ Ensure the following are installed:
 - Jenkins
 - A Private GitHub Repository
 - Docker Hub
+
+# Setup Guide
+
+![Add a little bit of body text(1)](https://github.com/user-attachments/assets/92f94b39-3eb2-4b18-9d6b-774c0672214c)
+
