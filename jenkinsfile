@@ -41,20 +41,12 @@ pipeline {
             steps {
                 script {
                     sh ''' 
-                    # Debugging: List keys directory
-                    ls -la keys
-
-                    # Debugging: Show inventory file
-                    cat inventory
-
-                    # Ensure the keys have the correct permissions
                     chmod 600 keys/private_key1
                     chmod 600 keys/private_key2
 
                     # Disable host key checking for Ansible
                     export ANSIBLE_HOST_KEY_CHECKING=False
 
-                    # Run the Ansible playbook
                     ansible-playbook -i inventory playbook.yml
                     '''
                 }
