@@ -43,3 +43,21 @@ Jenkins will orchestrate the following steps:
 - Installation of Docker on Vagrant machines.
 - Pulling the application image from Docker Hub.
 - Running the containerized application on the virtual machines.
+
+# Jenkins Setup
+1. Connect Jenkins with GitHub and Docker (Important: Since the repository is private, authentication is required):
+   
+   - Configure GitHub credentials in Jenkins to allow access to the private repository.
+   - Set up Docker credentials in Jenkins to push images to Docker Hub.
+
+3. Create a Pipeline Job:
+
+   - Set up a new Jenkins pipeline to manage the deployment process.
+
+4. Use the Provided Jenkinsfile:
+
+   - Configure the pipeline using the Jenkinsfile script included in this repository.
+
+ # Successful Pipeline Execution
+ Example Screenshot of a Successful Run:
+![Screenshot From 2025-02-10 20-00-38](https://github.com/user-attachments/assets/8ca6a14e-d28f-4e99-9a9b-badc21dda92c)
