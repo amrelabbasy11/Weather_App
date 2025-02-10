@@ -22,7 +22,8 @@ Ensure the following are installed:
 - Docker Hub
 
 # Setup Guide
-![Add a little bit of body text](https://github.com/user-attachments/assets/1ccfe456-7405-493e-bb3d-d1a85c6a15fb)
+![Add a little bit of body text(1)](https://github.com/user-attachments/assets/7ae242bc-1576-413c-a3c9-f34e797e484a)
+
 
 ![Add a little bit of body text(1)](https://github.com/user-attachments/assets/92f94b39-3eb2-4b18-9d6b-774c0672214c)
 
