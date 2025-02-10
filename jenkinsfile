@@ -7,12 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Cleanup Workspace') {
-            steps {
-                sh 'rm -rf *'
-            }
-        }
-
         stage('Fetch Repo') {
             steps {
                 git branch: 'main', credentialsId: 'jenkins-Token', url: 'https://github.com/amrelabbasy11/Weather_App.git'
@@ -32,14 +26,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG} .'
+                    sh "docker build -t amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG} ."
                 }
             }
         }
 
         stage('Push Image to Docker Hub') {
             steps {
-                sh 'docker push amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG}'
+                sh "docker push amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG}"
             }
         }
 
@@ -47,17 +41,24 @@ pipeline {
             steps {
                 script {
                     sh ''' 
-                    chmod 600 keys/vagrant-vm1/private_key
-                    chmod 600 keys/vagrant-vm2/private_key
+                    # Debugging: List keys directory
+                    ls -la keys
 
+                    # Debugging: Show inventory file
+                    cat inventory
+
+                    # Ensure the keys have the correct permissions
+                    chmod 600 keys/private_key1
+                    chmod 600 keys/private_key2
+
+                    # Disable host key checking for Ansible
                     export ANSIBLE_HOST_KEY_CHECKING=False
 
-                    ansible-playbook -i inventory playbook.yml --private-key=keys/vagrant-vm1/private_key
-                    ansible-playbook -i inventory playbook.yml --private-key=keys/vagrant-vm2/private_key
+                    # Run the Ansible playbook
+                    ansible-playbook -i inventory playbook.yml
                     '''
                 }
             }
         }
     }
 }
-
