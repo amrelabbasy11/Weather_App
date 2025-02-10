@@ -61,3 +61,10 @@ Jenkins will orchestrate the following steps:
  # Successful Pipeline Execution
  Example Screenshot of a Successful Run:
 ![Screenshot From 2025-02-10 20-00-38](https://github.com/user-attachments/assets/8ca6a14e-d28f-4e99-9a9b-badc21dda92c)
+
+# Image On Docker Hub 
+Example Screenshot of the Image on Docker Hub:
+![image](https://github.com/user-attachments/assets/cc062daa-2945-484d-9f53-69e8c3e755d3)
+
+# Containers Running Successfully
+Below is a screenshot showing the containers actively running on both machines:
