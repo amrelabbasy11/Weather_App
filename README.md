@@ -73,14 +73,45 @@ Below is a screenshot showing the containers actively running on both machines:
 # Application Execution
 Once everything is set up, you can launch your application. Below are screenshot showing the application output:
 
-The First vagrant machine : 
+- The First vagrant machine : 
 
 ![image](https://github.com/user-attachments/assets/de386313-d5dd-4d57-9198-c7e9f0ef141a)
 
-The Second vagrant machine :
+- The Second vagrant machine :
 
 ![image](https://github.com/user-attachments/assets/af22eac8-12f8-47f9-857f-3c2551683bbb)
 
+# Email Notification
+To set up email notifications in Jenkins, follow these steps:
+
+1. Access Jenkins System Settings
+   - Log in to your Jenkins dashboard.
+   - Go to Manage Jenkins > System.
+2. Configure SMTP Serve
+    1. Scroll down to the E-mail Notification section.
+
+    2. Fill in the following details:
+        - SMTP Server: smtp.gmail.com
+        - User Name: Your Gmail address (e.g., your-email@gmail.com).
+        - Password: Your Gmail app password (generate one from your Google Account settings if needed).
+        - Use SSL: Enable this option.
+        - SMTP Port: Use 465 for SSL or 587 for TLS.
+   - Note:
+    SSL (Port 465): Encrypts the connection using SSL.
+    TLS (Port 587): Encrypts the connection using TLS (preferred for modern setups).
+   3. Click Apply and Save.
+3. Test Email Configuration
+    1. In the E-mail Notification section, click Test configuration by sending a test email.
+    2. Enter your email address and click Test configuration.
+    3. Ensure you receive a test email to confirm the setup is working.
+![image](https://github.com/user-attachments/assets/fd2905e0-4d7e-4443-890b-be5afe6426e1)
+
+4. Install the Email Extension Plugin
+    1. Go to Manage Jenkins > Manage Plugins.
+    2. In the Available tab, search for Email Extension Plugin.
+    3. Install the plugin and restart Jenkins if prompted.
+5. Configure Email Notifications in Your Pipeline
+    Add the emailext step in your Jenkinsfile to send email notifications like this :
 
 # Conclusion
 By following the steps outlined in this README, you will be able to automate the deployment of your Python application using Jenkins, Docker, Vagrant, and Ansible. This setup ensures a streamlined and efficient deployment process, reducing manual intervention and increasing reliability.
