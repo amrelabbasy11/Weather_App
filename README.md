@@ -72,10 +72,13 @@ Below is a screenshot showing the containers actively running on both machines:
 
 # Application Execution
 Once everything is set up, you can launch your application. Below are screenshot showing the application output:
+
 The First vagrant machine : 
+
 ![image](https://github.com/user-attachments/assets/de386313-d5dd-4d57-9198-c7e9f0ef141a)
 
 The Second vagrant machine :
+
 ![image](https://github.com/user-attachments/assets/af22eac8-12f8-47f9-857f-3c2551683bbb)
 
 
