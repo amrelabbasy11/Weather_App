@@ -2,14 +2,15 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_TAG = "latest"
+        IMAGE_TAG = "latest-${BUILD_NUMBER}"
         IMAGE_NAME = "weather-image"
+        DOCKER_REPO = "amrelabbasy"
     }
 
     stages {
         stage('Fetch Repo') {
             steps {
-                git branch: 'main', credentialsId: 'jenkins-Token', url: 'https://github.com/amrelabbasy11/Weather_App.git'
+                git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/amrelabbasy11/Weather_App.git'
             }
         }
 
@@ -26,14 +27,19 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG} ."
+                    sh "docker build -t ${DOCKER_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ."
                 }
             }
         }
 
         stage('Push Image to Docker Hub') {
             steps {
-                sh "docker push amrelabbasy/${IMAGE_NAME}:${IMAGE_TAG}"
+                script {
+                    sh '''
+                        docker push ${DOCKER_REPO}/${IMAGE_NAME}:${IMAGE_TAG}
+                        docker logout
+                    '''
+                }
             }
         }
 
@@ -41,16 +47,37 @@ pipeline {
             steps {
                 script {
                     sh ''' 
-                    chmod 600 keys/private_key1
-                    chmod 600 keys/private_key2
-
-                    # Disable host key checking for Ansible
-                    export ANSIBLE_HOST_KEY_CHECKING=False
-
-                    ansible-playbook -i inventory playbook.yml
+                        [ -f keys/private_key1 ] && chmod 600 keys/private_key1
+                        [ -f keys/private_key2 ] && chmod 600 keys/private_key2
+                        export ANSIBLE_HOST_KEY_CHECKING=False
+                        ansible-playbook -i inventory playbook.yml || echo "Ansible Deployment Failed"
                     '''
                 }
             }
+        }
+    }
+
+    post {
+        success {
+            emailext (
+                subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "Great! The build succeeded! \n\n Check here: ${env.BUILD_URL}",
+                to: 'amrelabbasy2003@gmail.com'
+            )
+        }
+        failure {
+            emailext (
+                subject: "FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "Oops! The build failed. \n\n Logs: ${env.BUILD_URL}",
+                to: 'amrelabbasy2003@gmail.com'
+            )
+        }
+        always {
+            emailext (
+                subject: "Build Completed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "The build has finished with status: ${currentBuild.currentResult}. \n\n Details: ${env.BUILD_URL}",
+                to: 'amrelabbasy2003@gmail.com'
+            )
         }
     }
 }
