@@ -60,7 +60,8 @@ Jenkins will orchestrate the following steps:
 
  # Successful Pipeline Execution
  Example Screenshot of a Successful Run:
-![Screenshot From 2025-02-10 20-00-38](https://github.com/user-attachments/assets/8ca6a14e-d28f-4e99-9a9b-badc21dda92c)
+![image](https://github.com/user-attachments/assets/7b57c610-c2a9-463a-bbc2-eefedfeb3a18)
+
 
 # Image On Docker Hub 
 Example Screenshot of the Image on Docker Hub:
