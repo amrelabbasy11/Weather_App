@@ -62,17 +62,22 @@ Jenkins will orchestrate the following steps:
  Example Screenshot of a Successful Run:
 ![image](https://github.com/user-attachments/assets/7b57c610-c2a9-463a-bbc2-eefedfeb3a18)
 
-
 # Image On Docker Hub 
 Example Screenshot of the Image on Docker Hub:
 ![image](https://github.com/user-attachments/assets/d297376e-3b12-44bd-ab91-8f93a36cdc7c)
+
 # Containers Running Successfully
 Below is a screenshot showing the containers actively running on both machines:
-![image](https://github.com/user-attachments/assets/e75b0c35-07ba-4b8b-bcbd-89f4f0f000bd)
+![image](https://github.com/user-attachments/assets/51640309-5c7b-4897-8671-7c6648b8c0df)
 
 # Application Execution
 Once everything is set up, you can launch your application. Below are screenshot showing the application output:
-![image](https://github.com/user-attachments/assets/07de0fc7-90e6-41e4-9d20-00db525d4f6d)
+The First vagrant machine : 
+![image](https://github.com/user-attachments/assets/de386313-d5dd-4d57-9198-c7e9f0ef141a)
+
+The Second vagrant machine :
+![image](https://github.com/user-attachments/assets/af22eac8-12f8-47f9-857f-3c2551683bbb)
+
 
 # Conclusion
 By following the steps outlined in this README, you will be able to automate the deployment of your Python application using Jenkins, Docker, Vagrant, and Ansible. This setup ensures a streamlined and efficient deployment process, reducing manual intervention and increasing reliability.
