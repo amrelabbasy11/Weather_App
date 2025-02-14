@@ -113,8 +113,9 @@ To set up email notifications in Jenkins, follow these steps:
     3. Install the plugin and restart Jenkins if prompted.
 5. Configure Email Notifications in Your Pipeline
     Add the emailext step in your Jenkinsfile to send email notifications like this :
+   
    ![image](https://github.com/user-attachments/assets/a30bbdf6-54eb-4245-bc61-c47eaf0b6978)
-6. Verify Email Notifications
+7. Verify Email Notifications
     1. Run your Jenkins pipeline.
     2. Check your email inbox for notifications based on the pipeline's success or failure.
 - Success:
