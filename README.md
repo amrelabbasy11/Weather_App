@@ -104,8 +104,7 @@ To set up email notifications in Jenkins, follow these steps:
     1. In the E-mail Notification section, click Test configuration by sending a test email.
     2. Enter your email address and click Test configuration.
     3. Ensure you receive a test email to confirm the setup is working.
-![image](https://github.com/user-attachments/assets/6f5911b4-ae10-41d2-b3cb-4fa65ac716d0)
-
+![WhatsApp Image 2025-02-15 at 06 25 11_490a493a](https://github.com/user-attachments/assets/a3b8320c-8758-4459-b03d-b9e6940760e1)
 
 4. Install the Email Extension Plugin
     1. Go to Manage Jenkins > Manage Plugins.
@@ -118,11 +117,11 @@ To set up email notifications in Jenkins, follow these steps:
 7. Verify Email Notifications
     1. Run your Jenkins pipeline.
     2. Check your email inbox for notifications based on the pipeline's success or failure.
+       
 - Success:
- ![image](https://github.com/user-attachments/assets/763db42f-7b1f-4f9c-b73b-229b54825b12)
-- Failure:
-  ![image](https://github.com/user-attachments/assets/f94c72c1-92f1-4eb9-94b7-c23dbb196e40)
-  ![image](https://github.com/user-attachments/assets/87c5b1c4-d4f5-4465-83cc-ca6bddfdd2d2)
+![WhatsApp Image 2025-02-15 at 06 25 12_43a3e189](https://github.com/user-attachments/assets/43c6c750-5880-4ccb-8c81-6a00258e4cdc)
+![WhatsApp Image 2025-02-15 at 06 25 12_b3c570a3](https://github.com/user-attachments/assets/bc5533d2-87b1-49d2-93a5-e21c14d9f195)
+
 
 # Conclusion
 By following the steps outlined in this README, you will be able to automate the deployment of your Python application using Jenkins, Docker, Vagrant, and Ansible. This setup ensures a streamlined and efficient deployment process, reducing manual intervention and increasing reliability.
