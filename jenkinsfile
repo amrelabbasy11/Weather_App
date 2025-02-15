@@ -28,7 +28,6 @@ pipeline {
             steps {
                 script {
                     sh "docker build -t ${DOCKER_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ."
-                    sh 'exit 1' // Force the stage to fail
                 }
             }
         }
