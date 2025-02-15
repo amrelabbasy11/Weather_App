@@ -125,8 +125,8 @@ To set up email notifications in Jenkins, follow these steps:
 - Debug the email notification
  1. Write this command in build docker image stage :  sh 'exit 1' // Force the stage to fail
  2. it should send an email that say the build is failed like this mail :
-![image](https://github.com/user-attachments/assets/6474153d-aff4-4c14-8540-4cdad7f17cb7)
 ![image](https://github.com/user-attachments/assets/eccadfed-ca56-4624-9d3f-e43a5f234d16)
+![image](https://github.com/user-attachments/assets/6474153d-aff4-4c14-8540-4cdad7f17cb7)
 
 
 - Note
