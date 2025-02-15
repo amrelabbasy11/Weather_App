@@ -122,6 +122,24 @@ To set up email notifications in Jenkins, follow these steps:
 ![WhatsApp Image 2025-02-15 at 06 25 12_43a3e189](https://github.com/user-attachments/assets/43c6c750-5880-4ccb-8c81-6a00258e4cdc)
 ![WhatsApp Image 2025-02-15 at 06 25 12_b3c570a3](https://github.com/user-attachments/assets/bc5533d2-87b1-49d2-93a5-e21c14d9f195)
 
+- Debug the email notification
+ 1. Write this command in build docker image stage :  sh 'exit 1' // Force the stage to fail
+ 2. it should send an email that say the build is failed like this mail :
+![image](https://github.com/user-attachments/assets/6474153d-aff4-4c14-8540-4cdad7f17cb7)
+
+- Note
+  If the email is not sent even after following the steps you mentioned, try adding your email as a credential in Jenkins.         Here’s how you can do it : 
+   Step 1: Add Your Email as a Credential in Jenkins -> Open Jenkins Dashboard -> Go to Jenkins Home -> Click on Manage Jenkins. 
+           Go to Credentials Management
+           Click on Manage Credentials -> Select (Global credentials).
+
+    Add a New Credential
+        Click on Add Credentials.
+        In Kind, select Username and password.
+        Username: Enter your email (e.g., amrelabbasy2003@gmail.com).
+        Password: Enter your email password (or an App Password if using Gmail).
+        ID: Give it an identifier like email-credentials.
+        Click OK to save.
 
 # Conclusion
 By following the steps outlined in this README, you will be able to automate the deployment of your Python application using Jenkins, Docker, Vagrant, and Ansible. This setup ensures a streamlined and efficient deployment process, reducing manual intervention and increasing reliability.
