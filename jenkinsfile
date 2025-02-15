@@ -47,8 +47,8 @@ pipeline {
             steps {
                 script {
                     sh ''' 
-                        [ -f keys/private_key1 ] && chmod 600 keys/private_key1
-                        [ -f keys/private_key2 ] && chmod 600 keys/private_key2
+                        #[ -f keys/private_key1 ] && chmod 600 keys/private_key1
+                        #[ -f keys/private_key2 ] && chmod 600 keys/private_key2
                         export ANSIBLE_HOST_KEY_CHECKING=False
                         ansible-playbook -i inventory playbook.yml || echo "Ansible Deployment Failed"
                     '''
