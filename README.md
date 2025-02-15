@@ -22,7 +22,7 @@ Ensure the following are installed:
 - Docker Hub
 
 # Setup Guide
-https://github.com/user-attachments/assets/afa9a5ae-1f78-41a6-82a3-d3060de6df63
+![Pri(1)(1)](https://github.com/user-attachments/assets/f3529504-f945-4643-8456-944104f7e32c)
 
 
 1. Push Application Code to GitHub
