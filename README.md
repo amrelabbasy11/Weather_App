@@ -1,7 +1,7 @@
 # Automated Deployment of a Python Application Using Jenkins, Docker, Vagrant, Ansible, and Kubernetes
 
 # Introduction
-This repository contains all the necessary files and configurations to automate the deployment of a Weather Monitoring System using Jenkins, Docker, Vagrant, and Ansible. The goal is to establish a robust and scalable pipeline for building, deploying, and managing the application efficiently.
+This repository contains all the necessary files and configurations to automate the deployment of a Weather Monitoring System using Jenkins, Docker, Vagrant, Ansible, and Kubernetes. The goal is to establish a robust, scalable, and efficient pipeline for building, deploying, and managing the application.
 
 # Project Directory Layout
 - Dockerfile: Defines the Docker image for containerizing the Python application.
@@ -11,6 +11,7 @@ This repository contains all the necessary files and configurations to automate 
 - inventory: Ansible inventory file listing the target Vagrant hosts.
 - keys: Directory storing private keys for secure Jenkins access to the Vagrant machines.
 - Jenkinsfile: Defines the CI/CD pipeline steps for Jenkins automation.
+- k8s: Directory containing Kubernetes manifests (YAML files) for deploying and managing the application in a Kubernetes cluster.
 
 # Dependencies 
 Ensure the following are installed:
