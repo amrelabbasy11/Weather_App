@@ -17,6 +17,7 @@ Ensure the following are installed:
 - Docker
 - Vagrant
 - Ansible
+- Kubernetes
 - Jenkins
 - A Private GitHub Repository
 - Docker Hub
