@@ -111,10 +111,8 @@ To set up email notifications in Jenkins, follow these steps:
     2. In the Available tab, search for Email Extension Plugin.
     3. Install the plugin and restart Jenkins if prompted.
 5. Configure Email Notifications in Your Pipeline
-    Add the emailext step in your Jenkinsfile to send email notifications like this :
-   
-   ![image](https://github.com/user-attachments/assets/a30bbdf6-54eb-4245-bc61-c47eaf0b6978)
-7. Verify Email Notifications
+    Add the emailext step in your Jenkinsfile to send email notifications.
+6. Verify Email Notifications
     1. Run your Jenkins pipeline.
     2. Check your email inbox for notifications based on the pipeline's success or failure.
        
@@ -143,12 +141,59 @@ To set up email notifications in Jenkins, follow these steps:
         ID: Give it an identifier like email-credentials.
         Click OK to save.
 
+# Deploying the Weather App on Kubernetes
+- Overview
+   We will deploy the Weather App on a local Kubernetes cluster using Minikube for setup and ArgoCD for continuous delivery. A deployment.yaml file will be created and         pushed to a GitHub repository for version control.
+
+- Prerequisites
+   Ensure you have the following setup:
+   ✅ A Virtual Machine (VM) for Minikube
+   ✅ Minikube installed on the VM
+   ✅ kubectl installed on the VM
+   ✅ ArgoCD installed on Minikube
+   ✅ A GitHub repository (e.g., https://github.com/MuhamedMaher/weather-app.git)
+   ✅ A Docker Hub account with your Weather App image
+
+# Step 1: Install Minikube and kubectl:
+ - install Minikube :
+  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  sudo install minikube /usr/local/bin/
+
+- Install kubectl :
+   curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   chmod +x kubectl
+   sudo mv kubectl /usr/local/bin/
+
+- Start Minikube :
+   minikube start
+# Step 2: Install ArgoCD on Minikube
+# Step 3: Create Kubernetes Deployment and Service
+    - Define the Deployment and Service in a deployment.yaml file.
+    - Ensure the correct namespace is used.
+    - Deploy the resources to Kubernetes.
+# Step 4: Push Kubernetes Files to GitHub
+# Step 5: Deploy the Weather App to Kubernetes
+   - Use ArgoCD to deploy the application.
+ ![Screenshot From 2025-02-16 04-44-21](https://github.com/user-attachments/assets/ab70edcc-ddd8-46ef-ab05-c154a476da11)
+
+# Step 6: Configure ArgoCD to Manage the Deployment
+   1. Log in to ArgoCD CLI
+   2. Register Your GitHub Repository
+   3. Create an ArgoCD Application
+   4. Sync and Monitor Deployment
+   5. Access the Weather App
+      
+![image](https://github.com/user-attachments/assets/d6dafa92-f575-4231-84c5-a45e388c301c)
+
+
 # Conclusion
-By following the steps outlined in this README, you will be able to automate the deployment of your Python application using Jenkins, Docker, Vagrant, and Ansible. This setup ensures a streamlined and efficient deployment process, reducing manual intervention and increasing reliability.
-ith this CI/CD pipeline:
+By following the steps outlined in this README, you will be able to automate the deployment of your Python application using Jenkins, Docker, Vagrant, Ansible, and Kubernetes. This setup ensures a streamlined, scalable, and efficient deployment process, reducing manual intervention and increasing reliability.
+With this CI/CD pipeline:
 - Code updates are automatically tested, built, and deployed.
 - Docker containers ensure consistency across environments.
 - Ansible automates infrastructure provisioning and configuration.
 - Vagrant provides a flexible and reproducible virtualized environment.
-  
-This approach enhances scalability, maintainability, and efficiency, making it easier to manage deployments in real-world scenarios.
+- Kubernetes orchestrates containerized applications, ensuring scalability and fault tolerance.
+- ArgoCD enables GitOps-style continuous deployment, keeping applications in sync with the repository.
+
+This approach enhances automation, consistency, and scalability, making deployments more efficient and robust. 
