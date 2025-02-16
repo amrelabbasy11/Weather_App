@@ -10,5 +10,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 5000
-      nodePort: 31926
+      nodePort: 32000  # Picked a new available port in the range 30000-32767
   type: NodePort
