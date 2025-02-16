@@ -1,9 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: weather-app-namespace
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: weather-app
+  name: weather-app-deployment
+  namespace: weather-app-namespace
 spec:
-  replicas: 2  # Run 2 instances
+  replicas: 2
   selector:
     matchLabels:
       app: weather-app
@@ -13,7 +19,14 @@ spec:
         app: weather-app
     spec:
       containers:
-        - name: weather-container
-          image: amrelabbasy/weather-image:latest  # Updated with correct DockerHub image
+        - name: weather-app
+          image: amrelabbasy/weather-image:latest
           ports:
-            - containerPort: 80  # The port inside the container
+            - containerPort: 5000
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
