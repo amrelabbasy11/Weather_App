@@ -1,4 +1,4 @@
-# Python Application Deployment with Jenkins, Docker, Vagrant, and Ansible
+# Automated Deployment of a Python Application Using Jenkins, Docker, Vagrant, Ansible, and Kubernetes
 
 # Introduction
 This repository contains all the necessary files and configurations to automate the deployment of a Weather Monitoring System using Jenkins, Docker, Vagrant, and Ansible. The goal is to establish a robust and scalable pipeline for building, deploying, and managing the application efficiently.
@@ -147,12 +147,12 @@ To set up email notifications in Jenkins, follow these steps:
 
 - Prerequisites
    Ensure you have the following setup:
-   ✅ A Virtual Machine (VM) for Minikube
-   ✅ Minikube installed on the VM
-   ✅ kubectl installed on the VM
-   ✅ ArgoCD installed on Minikube
-   ✅ A GitHub repository (e.g., https://github.com/MuhamedMaher/weather-app.git)
-   ✅ A Docker Hub account with your Weather App image
+   - A Virtual Machine (VM) for Minikube
+   - Minikube installed on the VM
+   - kubectl installed on the VM
+   - ArgoCD installed on Minikube
+   - A GitHub repository (e.g., https://github.com/amrelabbasy11/weather-app.git)
+   - A Docker Hub account with your Weather App image
 
 # Step 1: Install Minikube and kubectl:
  - install Minikube :
