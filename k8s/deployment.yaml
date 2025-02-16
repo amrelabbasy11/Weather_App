@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: weather-container
-          image: amrelabbasy11/weather-app:latest  # Your app's container
+          image: amrelabbasy/weather-image:latest-40  # Updated image from Docker Hub
           ports:
             - containerPort: 80  # The port inside the container
