@@ -22,7 +22,8 @@ Ensure the following are installed:
 - Docker Hub
 
 # Setup Guide
-![Pri(1)(1)](https://github.com/user-attachments/assets/f3529504-f945-4643-8456-944104f7e32c)
+![WhatsApp Image 2025-02-15 at 21 05 40_d92a06d3](https://github.com/user-attachments/assets/9c7e15dd-0bf8-4742-a6ee-e7e2c9f5ac06)
+
 
 
 1. Push Application Code to GitHub
