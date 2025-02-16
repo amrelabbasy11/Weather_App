@@ -69,7 +69,7 @@ Jenkins will orchestrate the following steps:
 
 # Image On Docker Hub 
 Example Screenshot of the Image on Docker Hub:
-![image](https://github.com/user-attachments/assets/5d4e134c-6616-4dfa-9df6-34c5c8ae09bb)
+![image](https://github.com/user-attachments/assets/a1f33ca3-304c-4204-ae75-2fee99bd45ff)
 
 # Containers Running Successfully
 Below is a screenshot showing the containers actively running on both machines:
