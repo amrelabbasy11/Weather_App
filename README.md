@@ -47,6 +47,8 @@ Jenkins will orchestrate the following steps:
 - Pulling the application image from Docker Hub.
 - Running the containerized application on the virtual machines.
 
+5. Deploy to Kubernetes using ArgoCD
+
 # Jenkins Setup
 1. Connect Jenkins with GitHub and Docker (Important: Since the repository is private, authentication is required):
    
