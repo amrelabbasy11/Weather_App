@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: weather-app-service
 spec:
-  type: NodePort  # Exposes app on a port
+  type: NodePort  # Exposes app on a specific port
   selector:
     app: weather-app
   ports:
     - protocol: TCP
       port: 80        # The port inside the cluster
       targetPort: 80  # The port inside the container
-      nodePort: 30008  # The external port
+      nodePort: 31926  # Exposed external port (matches 192.168.49.2:31926)
